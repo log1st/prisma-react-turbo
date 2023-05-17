@@ -1,0 +1,77 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["FullTextIndex", "FullTextSearch", "clientExtensions"]
+}
+
+generator nestgraphql {
+  provider               = "prisma-nestjs-graphql"
+  output                 = "../src/gql"
+  reExport               = All
+  fields_Validator_from  = "class-validator"
+  fields_Validator_input = true
+
+  useInputType_Args_ALL = "match:Args"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid())
+
+  login String @unique
+
+  /// @HideField()
+  password String /// @encrypted
+
+  createdAt DateTime @default(now())
+
+  roleId String?
+  role   Role?   @relation(fields: [roleId], references: [id], onDelete: SetNull)
+}
+
+model Permission {
+  id String @id @default(uuid())
+
+  namespace String
+  slug      String
+
+  permissionsOnRoles PermissionsOnRoles[]
+
+  @@unique([namespace, slug])
+}
+
+model Role {
+  id String @id @default(uuid())
+
+  slug String @unique
+
+  createdAt DateTime @default(now())
+
+  permissionsOnRoles PermissionsOnRoles[]
+  users              User[]
+  config             Config[]
+}
+
+model PermissionsOnRoles {
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  permissionId String
+
+  role   Role   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  roleId String
+
+  @@unique([permissionId, roleId])
+}
+
+model Config {
+  id String @id @default(uuid())
+
+  initialRoleId String?
+  initialRole   Role?   @relation(fields: [initialRoleId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  active Boolean @unique
+}

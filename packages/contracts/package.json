@@ -1,0 +1,14 @@
+{
+  "name": "@oapis/contracts",
+  "packageManager": "yarn@3.5.0",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src.ts",
+  "dependencies": {
+    "@oapis/backend": "*"
+  },
+  "devDependencies": {
+    "@oapis/eslint-config": "*",
+    "@oapis/tsconfig": "*"
+  }
+}

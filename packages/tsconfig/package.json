@@ -1,0 +1,11 @@
+{
+  "name": "@oapis/tsconfig",
+  "packageManager": "yarn@3.5.0",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^18.14.0",
+    "typescript": "5.0.4"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@oapis/mono",
+  "packageManager": "yarn@3.5.0",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "generate": "node --loader=ts-node/esm ./generate/index.mts",
+    "g": "yarn generate",
+    "postinstall": "husky install"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@oapis/generate-template-files": "*",
+    "@types/fs-extra": "^11.0.1",
+    "eslint": "^8.38.0",
+    "fs-extra": "^11.1.1",
+    "husky": "^8.0.0",
+    "turbo": "^1.8.3"
+  }
+}

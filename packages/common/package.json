@@ -1,0 +1,26 @@
+{
+  "name": "@oapis/common",
+  "packageManager": "yarn@3.5.0",
+  "version": "0.0.1",
+  "private": true,
+  "module": "src/index.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore --ignore-pattern '*.stories.ts'",
+    "format": "prettier --write src/",
+    "generate-imports": "cti create ./src -b"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0"
+  },
+  "devDependencies": {
+    "@oapis/eslint-config": "*",
+    "@oapis/tsconfig": "*",
+    "@types/date-fns": "^2.6.0",
+    "create-ts-index": "^1.14.0",
+    "ts-node": "^10.9.1",
+    "typescript": "5.0.4"
+  }
+}

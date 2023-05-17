@@ -1,0 +1,20 @@
+{
+  "name": "@oapis/generate-template-files",
+  "packageManager": "yarn@3.5.0",
+  "version": "0.0.1",
+  "main": "dist/generate-template-files.cjs.js",
+  "module": "dist/generate-template-files.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "dependencies": {
+    "colors": "1.4.0",
+    "enquirer": "2.3.6",
+    "path-exists": "4.0.0",
+    "recursive-copy": "2.0.14",
+    "replace-string": "3.1.0",
+    "through2": "4.0.2",
+    "yargs": "16.2.0"
+  }
+}

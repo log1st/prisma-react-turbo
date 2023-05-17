@@ -1,0 +1,6 @@
+{
+  "extends": "@oapis/tsconfig/base.json",
+  "include": [
+    "./.eslintrc.cjs",
+  ]
+}

@@ -1,0 +1,10 @@
+import IConfigItem from '../models/IConfigItem';
+import IReplacer from '../models/IReplacer';
+export declare const displayError: (message: string) => Error | void;
+export declare const displayWarning: (message: string) => Error | void;
+export declare const displaySuccess: (message: string) => Error | void;
+export declare const throwErrorIfNoConfigItems: (options: IConfigItem[]) => void;
+export declare const throwErrorIfOptionNameIsNotFound: (item: IConfigItem | undefined, templateName: string) => void;
+export declare const throwErrorIfStringReplacersDoNotMatch: (item: IConfigItem | undefined, commandLineStringReplacers: IReplacer[]) => void;
+export declare const throwErrorIfNoStringOrDynamicReplacers: (options: IConfigItem[]) => void;
+export declare const throwErrorIfStringReplacersExistOrNoDynamicReplacers: (options: IConfigItem[]) => void;

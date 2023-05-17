@@ -1,0 +1,18 @@
+{
+  "extends": "@oapis/tsconfig/node.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+
+    "allowSyntheticDefaultImports": true,
+    "strictBindCallApply": true,
+    "declaration": true,
+    "sourceMap": true,
+    "incremental": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "@oapis/tsconfig/node.json",
+  "compilerOptions": {
+    "module": "esnext"
+  },
+  "include": [
+    "./generate",
+    ".commitlintrc"
+  ]
+}

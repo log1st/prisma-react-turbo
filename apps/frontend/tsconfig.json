@@ -1,0 +1,10 @@
+{
+  "extends": "@oapis/tsconfig/react.json",
+  "include": ["src", "vite.config.ts", "scripts"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "declaration": false,
+  },
+}
